@@ -1,0 +1,35 @@
+# INPUT : a2c3 ouput:aaccc
+
+string = input("enter the string")
+n = len(string)
+temp = 0
+char = []
+num = []
+if string[0].isdigit():
+    print('not valid string')
+    exit()
+for i in range(n):
+    if string[i].isalpha() and string[i+1].isalpha():
+        print('not valid string to print')
+        exit()
+for i in range(n):
+    if string[i].isdigit():
+        temp = temp * 10 + int(string[i])
+    else:
+        if temp != 0:
+            num.append(int(temp))
+        temp = 0
+        char.append(string[i])
+num.append(int(temp))
+res = ''
+k = 0
+
+for i in range(len(num)):
+    res += char[i] * num[k]
+    k += 1
+print(res)
+
+
+
+
+
